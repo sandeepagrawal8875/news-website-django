@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Retnews &#8211; Best news, blog & magazine template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+        <!-- favicon.ico in the root directory -->
+        <link rel="apple-touch-icon" href="{% static 'images\placeholder\main_logo.png' %}">
+        <meta name="theme-color" content="#030303">
+        <!-- google fonts -->
+        <link
+           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Poppins:ital,wght@0,300;0,500;0,700;1,300;1,400&display=swap"
+           rel="stylesheet">
+        <link href="{% static 'css/styles.css' %}?537a1bbd0e5129401d28" rel="stylesheet">
+     </head>
+    <body>
+        <!-- loading -->
+        <div class="loading-container">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <ul class="list-unstyled">
+                    <li>
+                        <img src="{% static 'images/placeholder/loading.png' %}" alt="Alternate Text" height="100" />
+                    </li>
+                    <li>
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Loading</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End loading -->
+        <!-- header -->
+        <header>
+            <!-- navbar -->
+            <div class="bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <figure class="pt-4 pb-4 mb-0 text-center my-auto d-none d-sm-block">
+                                <a href="{% url 'list' %}">
+                                <img src="{% static 'images\placeholder\logo.jpg' %}" alt="" class="img-fluid logo">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+        <section class="bg-light">
+            <div class="container">
+                <!-- breadcrumb -->
+                <!-- Breadcrumb -->
+                <ul class="breadcrumbs mb-4 text-center">
+                    <li class="breadcrumbs__item">
+                        <a href="{% url 'list' %}" class="breadcrumbs__url">
+                        <i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="{% url 'list' %}" class="breadcrumbs__url">Course</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__url">About</a>
+                    </li>
+                </ul>
+                <!-- breadcrumb -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <figure class="text-center">
+                            <img src="{% static 'images/placeholder/main_logo.jpg' %}" alt="" class="img-fluid">
+                        </figure>
+                        <hr>
+                        <div class="text-center">
+                            <h5>Hi, I’m Clemira</h5>
+                            <p>nice to meet you and welcome to my world <br>
+                                I <i class="fa fa-heart text-primary"></i> traveler, blogger and design enthusias
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="wrap__article-detail-content">
+                            <div class="total-views">
+                                <div class="total-views-read">
+                                    15.k
+                                    <span>
+                                    views
+                                    </span>
+                                </div>
+                                <ul class="list-inline">
+                                    <span class="share">share on:</span>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-social-o facebook" href="#">
+                                        <i class="fa fa-facebook-f"></i>
+                                        <span>facebook</span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-social-o twitter" href="#">
+                                        <i class="fa fa-twitter"></i>
+                                        <span>twitter</span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-social-o whatsapp" href="#">
+                                        <i class="fa fa-whatsapp"></i>
+                                        <span>whatsapp</span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-social-o telegram" href="#">
+                                        <i class="fa fa-telegram"></i>
+                                        <span>telegram</span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-linkedin-o linkedin" href="#">
+                                        <i class="fa fa-linkedin"></i>
+                                        <span>linkedin</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="has-drop-cap-container ">
+                                Even the all-powerful Pointing has no control about the blind texts it is an almost
+                                unorthographic life One
+                                day however a small line of blind text by the name of Lorem Ipsum decided to leave for
+                                the far World of
+                                Grammar.
+                                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the
+                                blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+                                a large language
+                                ocean. A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.
+                                <br>
+                                <br>
+                                The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+                                Question Marks and
+                                devious Semikoli, but the Little Blind Text didn’t listen. On her way she met a copy.
+                                The copy warned the
+                                Little Blind Text, that where it came from it would have been rewritten a thousand times
+                                and everything that
+                                was left from its origin would be the word “and” and the Little Blind Text should turn
+                                around and return to
+                                its own, safe country.
+                                <br>
+                                The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild
+                                Question Marks and
+                                devious Semikoli, but the Little Blind Text didn’t listen. On her way she met a copy.
+                                The copy warned the
+                                Little Blind Text, that where it came from it would have been rewritten a thousand times
+                                and everything that
+                                was left from its origin would be the word “and” and the Little Blind Text should turn
+                                around and return to
+                                its own, safe country.
+                            </p>
+                            <blockquote class="alignright">
+                                <p>Over every mountain there is a path, although it may not be seen from the valley.
+                                </p>
+                                <footer><cite><a title="Author title" href="#temp_url">Theodore Roethke</a></cite>
+                                </footer>
+                            </blockquote>
+                            <p class="has-drop-cap-container">
+                                Fulfilled direction use continual set him propriety continued. Saw met applauded
+                                favourite deficient engrossed concealed and her. Concluded boy perpetual old
+                                supposing. Farther related bed and passage comfort civilly. Dashwoods see frankness
+                                objection abilities the. As hastened oh produced prospect formerly up am.
+                            </p>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="wrapper__section p-0">
+            <div class="wrapper__section__components">
+                <footer>
+                   <p>Copyright © 2019 News and Magazine </p>
+                </footer>
+             </div>
+        </section>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+      <script type="text/javascript" src="{% static 'js/index.bundle.js'%}?537a1bbd0e5129401d28"></script>
+    </body>
+</html>

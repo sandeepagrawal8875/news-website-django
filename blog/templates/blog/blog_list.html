@@ -1,0 +1,131 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-8">
+    <aside class="wrapper__list__article ">
+       <h4 class="border_section">Category title</h4>
+       {% for blog in blog_obj %}
+       <!-- Post Article List -->
+       <div class="card__post card__post-list card__post__transition mt-30">
+          <div class="row ">
+             <div class="col-md-5">
+                <div class="card__post__transition">
+                   <a href="{% url 'detail' blog.id %}">
+                   <img src="{{blog.picture.url}}" class="img-fluid w-100" alt="">
+                   </a>
+                </div>
+             </div>
+             <div class="col-md-7 my-auto pl-0">
+                <div class="card__post__body ">
+                   <div class="card__post__content  ">
+                      <div class="card__post__category ">
+                         {{blog.categories}}
+                      </div>
+                      {% if user.is_authenticated %}
+                      <a href="{% url 'delete' blog.id %}" class="float-right"><img style="border:0; width:35px; padding:5px;" src="{% static 'icon/i-blue-delete.png' %}" /><a>
+                      <a href="{% url 'update' blog.id %}" class="float-right"><img style="border:0; width:35px; padding:5px;" src="{% static 'icon/i-edit.png' %}" /><a>
+                      {% endif %}
+                      <div class="card__post__author-info mb-2">
+                          <p></p>
+                         <ul class="list-inline">
+                            <li class="list-inline-item">
+                               <span class="text-primary">
+                               by {{blog.author}}
+                               </span>
+                            </li>
+                            <li class="list-inline-item">
+                               <span class="text-dark text-capitalize">
+                               {{blog.created_at}}
+                               </span>
+                            </li>
+                            <li class="list-inline-item">
+                              <span class="text-dark text-capitalize">
+                              views:{{blog.views}}
+                              </span>
+                           </li>
+                         </ul>
+                      </div>
+                      <div class="card__post__title">
+                         <h5>
+                            <a href="{% url 'detail' blog.id %}">
+                            {{blog.course_name}}
+                            </a>
+                         </h5>
+                         <p class="d-none d-lg-block d-xl-block mb-0">
+                            {{blog.description|truncatewords:30}}
+                         </p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       {% endfor %}
+    </aside>
+    <!-- Pagination -->
+    <div class="pagination-area">
+        {% if blog_obj.has_other_pages %}
+          <div class="pagination wow fadeIn animated" data-wow-duration="2s" data-wow-delay="0.5s"
+          style="visibility: visible; animation-duration: 2s; animation-delay: 0.5s; animation-name: fadeIn;">
+          {% if blog_obj.has_previous %}
+            <a href="?page={{ blog_obj.previous_page_number }}">«</a>
+          {% endif %}
+          {% for i in blog_obj.paginator.page_range %}
+          {% if blog_obj.number == i %}
+          <a class="active" href="?page={{ i }}">{{i}}</a>
+          {% else %}
+          <a href="?page={{ i }}">{{i}}</a>
+          {% endif %}
+          {% endfor %}
+          {% if blog_obj.has_next %}
+          <a href="?page={{ blog_obj.next_page_number }}">»</a>
+          {% endif %}
+          </div>
+        {% endif %}
+    </div>
+
+  
+ </div>
+
+{% endblock %}
+
+{% block popular %}
+{% for blog in popular_blog_obj %}
+<div class="mb-3">
+   <!-- Post Article -->
+   <div class="card__post card__post-list">
+      <div class="image-sm">
+         <a href="{% url 'detail' blog.id %}">
+         <img src="{{blog.picture.url}}" class="img-fluid" alt="">
+         </a>
+      </div>
+      <div class="card__post__body ">
+         <div class="card__post__content">
+            <div class="card__post__author-info mb-2">
+               <ul class="list-inline">
+                  <li class="list-inline-item">
+                     <span class="text-primary">
+                     by {{blog.author}}
+                     </span>
+                  </li>
+                  <li class="list-inline-item">
+                     <span class="text-dark text-capitalize">
+                     {{blog.created_at}}
+                     </span>
+                  </li>
+               </ul>
+            </div>
+            <div class="card__post__title">
+               <h6>
+                  <a href="{% url 'detail' blog.id %}">
+                  {{blog.course_name}}
+                  </a>
+               </h6>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endfor %}
+{% endblock %}

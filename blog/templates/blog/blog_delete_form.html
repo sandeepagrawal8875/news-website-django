@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class=" card card-body">
+        <div class="container">
+            <h3>Are You Sure You Want To DELETE ? </h3>
+        </div>
+        <a href="{% url 'list' %}" class="btn btn-primary btn-lg btn-block">Cancle</a>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-lg btn-block">Confirm</button>
+        </form>
+    </div>
+</body>
+
+</html>

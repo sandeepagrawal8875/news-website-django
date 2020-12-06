@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-md-8">
+    <aside class="wrapper__list__article ">
+    <h5>Create Blog</h5>
+    <form method="POST" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type="submit">Submit</button>
+    </form>
+    </aside>
+</div>
+{% endblock %}
+
+{% block popular %}
+{% for blog in popular_blog_obj %}
+<div class="mb-3">
+   <!-- Post Article -->
+   <div class="card__post card__post-list">
+      <div class="image-sm">
+         <a href="{% url 'detail' blog.id %}">
+         <img src="{{blog.picture.url}}" class="img-fluid" alt="">
+         </a>
+      </div>
+      <div class="card__post__body ">
+         <div class="card__post__content">
+            <div class="card__post__author-info mb-2">
+               <ul class="list-inline">
+                  <li class="list-inline-item">
+                     <span class="text-primary">
+                     by {{blog.author}}
+                     </span>
+                  </li>
+                  <li class="list-inline-item">
+                     <span class="text-dark text-capitalize">
+                     {{blog.created_at}}
+                     </span>
+                  </li>
+               </ul>
+            </div>
+            <div class="card__post__title">
+               <h6>
+                  <a href="{% url 'detail' blog.id %}">
+                  {{blog.course_name}}
+                  </a>
+               </h6>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endfor %}
+{% endblock %}
